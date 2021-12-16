@@ -60,5 +60,6 @@ fun main() {
     // everyone is double counted except first and last of seed who need one
     // added to be properly double counted. In practice I think this ~never
     // matters.
+    println("${bigramCounts.counts.map {it.value}.sum()}")
     println("${(max - min) / 2}")
 }
