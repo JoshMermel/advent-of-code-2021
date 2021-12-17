@@ -103,8 +103,7 @@ fun parseLiteral(stream: DataStream, version: Int): LitPacket {
 
 fun parseOperator(stream: DataStream, version: Int, typeId: Int): OpPacket {
     val type = stream.getBits(1).single()
-    val packets = 
-    when (type) {
+    val packets = when (type) {
         0 -> parseStream(DataStream(stream.getBits( stream.getBits(15).toInt())))
         else -> buildList {
             val length = stream.getBits(11).toInt()
